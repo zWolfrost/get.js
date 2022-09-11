@@ -186,7 +186,7 @@ export default
     */
    GCD: function(n1, n2)
    {
-      return (!n2) ? n1 : this.GCD(n2, n1 % n2);
+      return n2 ? this.GCD(n2, n1 % n2) : n1;
    },
    /**
     * @returns {Number} The least common multiple between two given numbers
