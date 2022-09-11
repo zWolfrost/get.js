@@ -1,0 +1,31 @@
+{
+   "name": "get.js",
+   "version": "1.0.0",
+   "description": "A JavaScript library that provides a bunch of useful, optimized and often math-related functions",
+   "main": "src/get.js",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/zWolfrost/get.js.git"
+   },
+   "author": "Luca Russo",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/zWolfrost/get.js/issues"
+   },
+   "homepage": "https://github.com/zWolfrost/get.js#readme",
+   "keywords": [
+      "utility",
+      "math",
+      "get",
+      "intervals",
+      "pattern",
+      "unique",
+      "decimals",
+      "fractions",
+      "random",
+      "gcd",
+      "lcm",
+      "base",
+      "performance"
+   ]
+}
