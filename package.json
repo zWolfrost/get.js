@@ -1,5 +1,5 @@
 {
-   "name": "get.js",
+   "name": "@zwolfrost/get.js",
    "version": "1.0.0",
    "description": "A JavaScript library that provides a bunch of useful, optimized and often math-related functions",
    "main": "src/get.js",
