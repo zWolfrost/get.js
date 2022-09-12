@@ -30,7 +30,7 @@ use a [cdn](#how-to-use) or copy the file from the [src directory](src/).
 ```
 import get from "path/to/get.js";
 //OR
-import get from "https://cdn.jsdelivr.net/npm/@zwolfrost/get.js@1.0.1/src/get.js";
+import get from "https://cdn.jsdelivr.net/npm/@zwolfrost/get.js@1.1.0/src/get.js";
 
 get.fraction(2.5)
 //returns [ 5, 2 ]
