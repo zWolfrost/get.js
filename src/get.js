@@ -157,17 +157,6 @@ export default
 
 
    /**
-    * Calls a given function by name (globals only)
-    * @param {String} name The name of the function to call
-    * @param  {...any} args The arguments to pass to the function
-    * @returns {any} The result of the function
-    */
-   call: function(name, ...args)
-   {
-      return window[name](...args);
-   },
-
-   /**
     * Gets the current time of the day
     * @returns {Array.<Number>} An array that contains the current hours, minutes, seconds and milliseconds (respectively)
     */
@@ -198,6 +187,17 @@ export default
       return (n1 * n2) / this.GCD(n1, n2);
    },
 
+   /**
+    * Calculates a root with the given number and index
+    * @param {Number} n The radicand of the root
+    * @param {Number} index The index of the root (default: 2)
+    * @returns {Number} The result of the root
+    */
+   root: function(n, index=2)
+   {
+      return n**(1/index);
+   },
+
 
    /**
     * Converts a number (or a string) from & to the given bases
@@ -206,7 +206,7 @@ export default
     * @param {any} base The desired number/string
     * @param {Number} bx The current base (default: 10)
     * @param {Number} by The desired final base (default: 10)
-    * @returns {any} The converted number/string
+    * @returns {String} The converted base (A STRING)
     */
    base: function(base, bx=10, by=10)
    {

@@ -17,6 +17,13 @@ You can just install it like any npm package,<br>
 use a [cdn](#how-to-use) or copy the file from the [src directory](src/).
 
 &nbsp;
+## Changelog and Breaking Changes
+**Watch out for this section if you wish to migrate to a different version.** <br>
+*New patches are usually bugfixes and/or documentation clarification*
+
+- **v1.1.0**: Removed "call" method as i didn't feel like it fits in the package theme. Also because it was just the following code: `window[name](...args)` <br> Added the "root" method.
+
+&nbsp;
 ## How to use
 *Note that you can change the cdn version and/or package type of the library with whatever version you want. Template:*<br>
 `https://cdn.jsdelivr.net/npm/package@version/file`.
@@ -43,10 +50,10 @@ get.fraction(2.5)
 | fraction    | Returns a fraction calculated from the given decimal number.
 | random      | Returns a random number between the two given numbers (inclusive).
 | normalized  | Returns a normalized version of the given string (latin letters only).
-| call        | Returns the result of a given function after calling it by name (globals only).
 | time        | Returns the current time of the day.
 | GCD         | Returns the greatest common divisor between two given numbers.
 | LCM         | Returns the least common multiple between two given numbers.
+| root        | Returns the result of a root with the given number and index.
 | base        | Returns a converted number (or a string) from & to the given bases.
 | performance | Returns the time to execute the given function in milliseconds.
 
