@@ -25,12 +25,16 @@ use a [cdn](#how-to-use) or copy the file from the [src directory](src/).
 
 &nbsp;
 ## How to use
-*Note that you can change the cdn version and/or package type of the library with whatever version you want. Template:*<br>
+*Note that you can change the cdn version and/or package type of the library with whatever version you want. Template:*
+
 `https://cdn.jsdelivr.net/npm/package@version/file`.
+
+*Also note that you have to use an ES module to import as seen below, unless you want to use the CDN method*
+
 ```
-import get from "path/to/get.js";
+import get from "@zwolfrost/get.js";
 //OR
-import get from "https://cdn.jsdelivr.net/npm/@zwolfrost/get.js@1.1.0/src/get.js";
+import get from "https://cdn.jsdelivr.net/npm/@zwolfrost/get.js@1.1/src/get.js";
 
 get.fraction(2.5)
 //returns [ 5, 2 ]
