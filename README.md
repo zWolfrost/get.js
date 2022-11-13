@@ -19,9 +19,10 @@ use a [cdn](#how-to-use) or copy the file from the [src directory](src/).
 &nbsp;
 ## Changelog and Breaking Changes
 **Watch out for this section if you wish to migrate to a different version.** <br>
-*New patches are usually bugfixes and/or documentation clarification*
+*New patches are usually bugfixes and/or documentation clarifications and only meaningful ones are written.*
 
 - **v1.1.0**: Removed "call" method as i didn't feel like it fits in the package theme. Also because it was just the following code: `window[name](...args)` <br> Added the "root" method.
+  - *v1.1.1: The imports' usage was finally corrected and the type of the package is specified in package.json (module).*
 
 &nbsp;
 ## How to use
@@ -36,8 +37,8 @@ import get from "@zwolfrost/get.js";
 //OR
 import get from "https://cdn.jsdelivr.net/npm/@zwolfrost/get.js@1.1/src/get.js";
 
-get.fraction(2.5)
-//returns [ 5, 2 ]
+get.fraction(1.375, 2)
+//returns [ 227, 165 ] because 227/165 = 1.3757575...
 ```
 
 &nbsp;
@@ -51,7 +52,7 @@ get.fraction(2.5)
 | pattern     | Returns an array made up of the given length and number pattern.
 | unique      | Returns an array made up of unique numbers (that never repeat) from the given one.
 | decimals    | Returns the number of decimals in the given number.
-| fraction    | Returns a fraction calculated from the given decimal number.
+| fraction    | Returns a fraction calculated from the given decimal number. Also works with repeating decimals, if specified.
 | random      | Returns a random number between the two given numbers (inclusive).
 | normalized  | Returns a normalized version of the given string (latin letters only).
 | time        | Returns the current time of the day.

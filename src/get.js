@@ -88,19 +88,22 @@ export default
     * @param {Boolean} simplify Whether to simplify the fraction (e.g: 25/10 ➜ 5/2) (default: true)
     * @returns {Array.<Number>} An array containing the numerator and denominator of the calculated fraction
     */
-   fraction: function(decimal, repDec=0, simplify=true)
+   fraction: function(decimal, repeatingDec=0, simplify=true)
    {
       if (decimal < 0)
       {
-         let absRes = get.fraction(-decimal, repDec);
+         let absRes = get.fraction(-decimal, repeatingDec);
          return [-absRes[0], absRes[1]];
       }
 
       let num, den;
 
-      if (repDec == 0)
+      let allDec = this.decimals(decimal)
+      if (repeatingDec > allDec) repeatingDec = allDec;
+
+      if (repeatingDec == 0)
       {
-         let allDecMult = 10 ** this.decimals(decimal);
+         let allDecMult = 10 ** allDec;
 
          num = decimal * allDecMult;
          den = allDecMult;
@@ -109,19 +112,17 @@ export default
       {
          let removeDecimals = (dec, rem) => Math.trunc(dec*(10**rem))/10**rem;
 
-         let regularDec = this.decimals(decimal) - repDec;
+         let regularDec = allDec - repeatingDec;
 
-         num = (decimal * (10**repDec) - removeDecimals(decimal, regularDec)) * 10**regularDec;
-         den = (10**repDec - 1) * 10**regularDec;
+         num = (decimal * (10**repeatingDec) - removeDecimals(decimal, regularDec)) * 10**regularDec;
+         den = (10**repeatingDec - 1) * 10**regularDec;
       }
 
       num = Math.trunc(num);
 
       if (simplify)
       {
-         let gcd = (n1, n2) => n2 ? gcd(n2, n1 % n2) : n1;
-
-         const GCD = gcd(num, den);
+         const GCD = this.GCD(num, den);
 
          num /= GCD;
          den /= GCD;
