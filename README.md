@@ -23,6 +23,8 @@ use a [cdn](#how-to-use) or copy the file from the [src directory](src/).
 
 - **v1.1.0**: Removed "call" method as i didn't feel like it fits in the package theme. Also because it was just the following code: `window[name](...args)` <br> Added the "root" method.
   - *v1.1.1: The imports' usage was finally corrected and the type of the package is specified in package.json (module).*
+<br><br>
+- **v1.2.0**: Added "prime_factors" and "extracted_root" methods.
 
 &nbsp;
 ## How to use
@@ -46,21 +48,23 @@ get.fraction(1.375, 2)
 
 **Instructions on parameters and details can be found in the JSDOC comments**
 
-| Method      | Description
-|:-:          |:-
-| intervals   | Returns an array containing the intervalling numbers between the two given numbers (or arrays).
-| pattern     | Returns an array made up of the given length and number pattern.
-| unique      | Returns an array made up of unique numbers (that never repeat) from the given one.
-| decimals    | Returns the number of decimals in the given number.
-| fraction    | Returns a fraction calculated from the given decimal number. Also works with repeating decimals, if specified.
-| random      | Returns a random number between the two given numbers (inclusive).
-| normalized  | Returns a normalized version of the given string (latin letters only).
-| time        | Returns the current time of the day.
-| GCD         | Returns the greatest common divisor between two given numbers.
-| LCM         | Returns the least common multiple between two given numbers.
-| root        | Returns the result of a root with the given number and index.
-| base        | Returns a converted number (or a string) from & to the given bases.
-| performance | Returns the time to execute the given function in milliseconds.
+| Method         | Description
+|:-:             |:-
+| intervals      | Returns an array that contains the intervalling numbers between the two given numbers (or arrays).
+| pattern        | Returns an array made up of the given length and number pattern.
+| unique         | Returns an array made up of unique numbers (that never repeat) from the given one.
+| decimals       | Returns the number of decimals in the given number.
+| fraction       | Returns a fraction calculated from the given decimal number. Also works with repeating decimals, if specified.
+| random         | Returns a random number between the two given numbers (inclusive).
+| normalized     | Returns a normalized version of the given string (latin letters only).
+| time           | Returns the current time of the day.
+| GCD            | Returns the greatest common divisor between two given numbers.
+| LCM            | Returns the least common multiple between two given numbers.
+| prime_factors  | Returns an array that contains the prime numbers that multiply together to make the original number.
+| extracted_root | Returns an array that contains the extracted number and the one left in the root.
+| root           | Returns the result of a root with the given number and index.
+| base           | Returns a converted number (or a string) from & to the given bases.
+| performance    | Returns the time to execute the given function in milliseconds.
 
 &nbsp;
 # Found a bug and/or need help?

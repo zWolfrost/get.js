@@ -188,6 +188,72 @@ export default
       return (n1 * n2) / this.GCD(n1, n2);
    },
 
+
+   /**
+    * Does prime factorization/decomposition of a given number
+    * @param {Number} n The desired number
+    * @returns {Array.<Number>} An array that contains the prime numbers that multiply together to make the original number
+    */
+   prime_factors: function(n)
+   {
+      if (n == 1) return [1];
+
+      let primeFactors = []
+      let factor = 2
+
+      while (n > 1)
+      {
+         while (n % factor == 0)
+         {
+            primeFactors.push(factor)
+            n /= factor
+         }
+
+         if (factor*factor > n)
+         {
+            if (n > 1) primeFactors.push(n)
+            break
+         }
+
+         factor++
+      }
+
+      return primeFactors
+   },
+
+   /**
+    * Tries extracting a given number from a root
+    * @param {Number} n The desired number
+    * @returns {Array.<Number>} An array that contains the extracted number and the one left in the root
+    * @example
+    * get.extracted_root(50);
+    * //returns [5, 2] because extracted "√50" is "5√2"
+    */
+   extracted_root: function(n)
+   {
+      let primeFactors = this.prime_factors(n);
+      let doubles = [];
+      let uniques = [];
+
+      for (let factor of primeFactors)
+      {
+         if (uniques.length && uniques.at(-1) == factor) doubles.push(uniques.pop())
+         else uniques.push(factor)
+      }
+
+      function multiplyArray(arr)
+      {
+         let res = 1;
+
+         for (let num of arr) res *= num
+
+         return res
+      }
+
+      return [multiplyArray(doubles), multiplyArray(uniques)]
+   },
+
+
    /**
     * Calculates a root with the given number and index
     * @param {Number} n The radicand of the root
@@ -262,7 +328,7 @@ export default
       RES = fun();
       END = performance.now();
 
-      if (log) console.log(`perf (ms): ${END-BEG}\nresult: ${JSON.stringify(RES)}`);
+      if (log) console.log(`perf ms: ${END-BEG}\nresults: ${JSON.stringify(RES)}`);
 
       return [END-BEG, RES];
    },
